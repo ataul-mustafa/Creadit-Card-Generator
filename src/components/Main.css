@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Poppins:wght@500&family=Roboto:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mainContainer{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.mainContainer > .card {
+    width: 30%;
+    background-image: linear-gradient(135deg, rgb(53, 7, 59), rgba(14, 99, 121, 0.6), rgba(53, 7, 59, 0.8), rgb(53, 7, 59));
+}
+
+.mainContainer > .formContainer {
+    width: 70%;
+    background-color: #e5f0f1;
+}
+
+.mainContainer > .formContainer > .formBox {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContainer > .formContainer > .formBox > .form {
+    height: 50%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10%;
+}
+
+.mainContainer > .formContainer > .formBox > .form label {
+    display: block;
+    text-transform: uppercase;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    letter-spacing: 0.155em;
+    text-align: left;
+    margin-bottom: 10px;    
+}
+
+.mainContainer > .formContainer > .formBox > .form input {
+    padding: 10px;
+    border: 1px solid rgb(133, 116, 116);
+    outline: none;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.mainContainer > .formContainer > .formBox > .form > .adjustInput {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+} 
+
+.mainContainer > .formContainer > .formBox > .form > .adjustInput > div {
+    width: 48%;
+}
+
+.mainContainer > .formContainer > .formBox > .form > .adjustInput > div > .expDate {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainContainer > .formContainer > .formBox > .form > .adjustInput > div > .expDate > div {
+    width: 48%;
+}
+
+.error {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: red;    
+}
+
+.submitButton{
+    background-color: rgb(13, 9, 58);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 13px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* .mainContainer > .formContainer > .formBox > .form > div .adjustInput{
+    display: inline-block;
+}
+
+.mainContainer > .formContainer > .formBox > .form > div > .expDate > input {
+    width: 48%;
+}
+
+.mainContainer > .formContainer > .formBox > .form > div .cvc {
+    width: 50%;
+} */
