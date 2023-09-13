@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Cards from './Cards';
+import {Toaster, toast} from 'react-hot-toast'
 import './Main.css';
 
 function MainPage() {
@@ -94,6 +95,7 @@ function MainPage() {
             console.log(cardInfo);
             cardInfo.cardNo = addSpacesToCreditCardNumber(cardInfo.cardNo);
             setData(cardInfo);
+            toast.success("Card Created Successfully");
         } else {
             console.log(updatedErrors);
         }
@@ -154,6 +156,7 @@ function MainPage() {
                     </form>
                 </div>
             </section>
+            <Toaster position='bottom-center' reverseOrder={false} />
         </div>
     )
 }
