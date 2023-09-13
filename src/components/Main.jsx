@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Cards from './Cards';
 import './Main.css';
 
 function MainPage() {
@@ -20,7 +21,8 @@ function MainPage() {
     }
 
     const [cardInfo, setCardInfo] = useState(initialInfo);
-    let [error, setError] = useState(initialError);
+    const [error, setError] = useState(initialError);
+    const [data, setData] = useState("");
 
 
     function hasNumber(str) {
@@ -29,6 +31,10 @@ function MainPage() {
     function hasChar(inputString) {
         return /^\d+$/.test(inputString);
     }
+    function addSpacesToCreditCardNumber(cardNumber) {
+        // Use regular expressions to add a space after every 4 characters
+        return cardNumber.replace(/(.{4})/g, '$1 ');
+      }
 
     const submitForm = (e) => {
         e.preventDefault();
@@ -75,6 +81,7 @@ function MainPage() {
             updatedErrors.cvcError = "Enter a valid CVC (3 digits)";
         }
 
+
         setError(updatedErrors);
 
         if (
@@ -85,6 +92,8 @@ function MainPage() {
             !updatedErrors.cvcError
         ) {
             console.log(cardInfo);
+            cardInfo.cardNo = addSpacesToCreditCardNumber(cardInfo.cardNo);
+            setData(cardInfo);
         } else {
             console.log(updatedErrors);
         }
@@ -93,13 +102,15 @@ function MainPage() {
 
     return (
         <div className='mainContainer'>
-            <section className="card"></section>
+            <section className="card">
+                <Cards data={data} />
+            </section>
             <section className="formContainer">
                 <div action="" className="formBox">
                     <form className='form' action="">
                         <div className="input">
                             <label htmlFor="name">cardholder name</label>
-                            <input type="text" id='name' onChange={(e) => { setCardInfo({ ...cardInfo, name: e.target.value }) }} placeholder='eg. Jane Apleseed' />
+                            <input type="text" id='name' onChange={(e) => { setCardInfo({ ...cardInfo, name: e.target.value }) }} placeholder='eg. Ataul Mustafa' />
                             {
                                 error.nameError ? <div className='error'>{error.nameError}</div> : <div className='error'> </div>
                             }
@@ -123,7 +134,7 @@ function MainPage() {
 
                                     </div>
                                     <div>
-                                        <input type="number" onChange={(e) => { setCardInfo({ ...cardInfo, expYear: e.target.value }) }} placeholder='YY' />
+                                        <input type="number" onChange={(e) => { setCardInfo({ ...cardInfo, expYear: e.target.value }) }} placeholder='YYYY' />
 
                                         {
                                             error.yearError ? <div className='error'>{error.yearError}</div> : <div className='error'> </div>

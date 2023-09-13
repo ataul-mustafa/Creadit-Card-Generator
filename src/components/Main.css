@@ -101,14 +101,107 @@
     cursor: pointer;
 }
 
-/* .mainContainer > .formContainer > .formBox > .form > div .adjustInput{
-    display: inline-block;
+
+/* Designing card component */
+
+.cardContainer > section {
+    width: 100%;
+    height: 35vh;
+    margin: 40px 0;
 }
 
-.mainContainer > .formContainer > .formBox > .form > div > .expDate > input {
-    width: 48%;
+.cardContainer > .card1{
+    position: relative;
+    left: 35%;
+    border-radius: 10px;
+    background-image: linear-gradient(135deg, rgb(23, 23, 145), rgb(92, 17, 136), rgb(197, 37, 131), rgb(27, 80, 110), rgb(139, 20, 86));
 }
 
-.mainContainer > .formContainer > .formBox > .form > div .cvc {
-    width: 50%;
-} */
+.cardContainer > .card1 > .circles{
+    display: flex;
+    width: 25%;
+    justify-content: space-between;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.cardContainer > .card1 > .circles > div:nth-child(1){
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    align-content: center;
+}
+
+.cardContainer > .card1 > .circles > div:nth-child(2){
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    margin: auto;
+}
+
+.cardContainer > .card1 > .number > div{
+    font-family: Roboto;
+    font-size: 25px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 5px;
+    position: absolute;
+    bottom: 30%;
+    left: 8%;
+}
+
+.cardContainer > .card1 > .name > div:nth-child(1){
+    font-family: Roboto;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 3px;
+    position: absolute;
+    bottom: 10%;
+    left: 8%;
+}
+
+.cardContainer > .card1 > .name > div:nth-child(2){
+    font-family: Roboto;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 3px;
+    position: absolute;
+    bottom: 10%;
+    right: 8%;
+}
+
+
+.cardContainer > .card2{
+    position: relative;
+    left: 50%;
+    border-radius: 10px;
+    background-color: #e2d1d1;
+}
+
+.cardContainer > .card2 > div:nth-child(1) {
+    width: 100%;
+    height: 20%;
+    background-color: #000;
+    position: absolute;
+    top: 10%;
+}
+
+.cardContainer > .card2 > div:nth-child(2) {
+    width: 80%;
+    height: 15%;
+    background-color: #8d6666;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    text-align: right;
+    padding: 10px;
+    letter-spacing: 3px;
+    color: #fff;
+}
