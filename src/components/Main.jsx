@@ -50,7 +50,7 @@ function MainPage() {
 
         if (!cardInfo.cardNo) {
             updatedErrors.cardError = "Card number required";
-        } else if ((cardInfo.cardNo).length !== 16) {
+        } else if ((cardInfo.cardNo).length !== 16 && (cardInfo.cardNo).length !== 19 ) {
             updatedErrors.cardError = "Card number must be of 16 digits";
         }
 
@@ -115,7 +115,7 @@ function MainPage() {
                         </div>
                         <div className="input">
                             <label htmlFor="cardNo">card number</label>
-                            <input type="number" id='cardNo' onChange={(e) => { setCardInfo({ ...cardInfo, cardNo: e.target.value }) }} placeholder='e.g. 1234 5678 9123 0000' />
+                            <input type="number" id='cardNo' onChange={(e) => { setCardInfo({ ...cardInfo, cardNo: e.target.value }) }} placeholder='e.g. 0000 0000 0000 0000' />
                             {
                                 error.cardError ? <div className='error'>{error.cardError}</div> : <div className='error'> </div>
                             }
