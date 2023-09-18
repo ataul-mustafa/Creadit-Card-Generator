@@ -40,26 +40,22 @@ function MainPage() {
     const submitForm = (e) => {
         e.preventDefault();
 
-        const date = new Date();
-
-        let updatedErrors = { ...initialError }; // Initialize errors as empty
+        let updatedErrors = { ...initialError }; 
 
         if (!cardInfo.name) {
-            updatedErrors.nameError = "Enter your name";
+            updatedErrors.nameError = "Name is required";
         } else if (hasNumber(cardInfo.name)) {
             updatedErrors.nameError = "Name cannot contain numbers";
         }
 
         if (!cardInfo.cardNo) {
-            updatedErrors.cardError = "Enter your card number";
-        } else if (!hasChar(cardInfo.cardNo)) {
-            updatedErrors.cardError = "Card number cannot contain characters";
-        } else if (cardInfo.cardNo.length > 16 || cardInfo.cardNo.length < 16) {
+            updatedErrors.cardError = "Card number required";
+        } else if ((cardInfo.cardNo).length !== 16) {
             updatedErrors.cardError = "Card number must be of 16 digits";
         }
 
         if (!cardInfo.expMonth) {
-            updatedErrors.monthError = "Enter expiry month";
+            updatedErrors.monthError = "Expiry month required";
         } else if (!hasChar(cardInfo.expMonth)) {
             updatedErrors.monthError = "Enter month in numbers";
         } else if (parseInt(cardInfo.expMonth) > 12 || parseInt(cardInfo.expMonth) < 1) {
@@ -67,15 +63,15 @@ function MainPage() {
         }
 
         if (!cardInfo.expYear) {
-            updatedErrors.yearError = "Enter expiry year";
+            updatedErrors.yearError = "Expiry year required";
         } else if (!hasChar(cardInfo.expYear)) {
             updatedErrors.yearError = "Year cannot contain characters";
-        } else if (parseInt(cardInfo.expYear) < date.getFullYear()) {
+        } else if ((cardInfo.expYear).length !== 2) {
             updatedErrors.yearError = "Enter a valid year";
         }
 
         if (!cardInfo.cvc) {
-            updatedErrors.cvcError = "Enter CVC";
+            updatedErrors.cvcError = "CVC is required";
         } else if (!hasChar(cardInfo.cvc)) {
             updatedErrors.cvcError = "CVC cannot contain characters";
         } else if (cardInfo.cvc.length !== 3) {
@@ -136,7 +132,7 @@ function MainPage() {
 
                                     </div>
                                     <div>
-                                        <input type="number" onChange={(e) => { setCardInfo({ ...cardInfo, expYear: e.target.value }) }} placeholder='YYYY' />
+                                        <input type="number" onChange={(e) => { setCardInfo({ ...cardInfo, expYear: e.target.value }) }} placeholder='YY' />
 
                                         {
                                             error.yearError ? <div className='error'>{error.yearError}</div> : <div className='error'> </div>

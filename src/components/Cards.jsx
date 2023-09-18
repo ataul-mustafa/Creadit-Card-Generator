@@ -22,7 +22,7 @@ function Cards({ data }) {
                     </div>
                     <div>
                         {
-                            data.expMonth ? <div>{data.expMonth}/{data.expYear}</div> : <div>00/0000</div>
+                            data.expMonth ? <div>{data.expMonth}/{data.expYear}</div> : <div>00/00</div>
                         }
                     </div>
                 </div>
